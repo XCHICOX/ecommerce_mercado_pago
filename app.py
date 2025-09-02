@@ -1,5 +1,9 @@
 from flask import Flask, render_template, request
 import mercadopago
+from dotenv import load_dotenv
+import os
+
+load_dotenv()  # lê as variáveis do .env
 
 app = Flask(__name__)
 
