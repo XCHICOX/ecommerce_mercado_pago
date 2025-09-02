@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+</head>
+<body>
+    <h2>Finalize seu pagamento</h2>
+    <div id="button-checkout"></div>
+
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <script>
+        const mp = new MercadoPago("{{ public_key }}", {locale: 'pt-BR'});
+
+        mp.checkout({
+            preference: {
+                id: "{{ preference_id }}"
+            },
+            render: {
+                container: '#button-checkout',
+                label: 'Pagar agora'
+            }
+        });
+    </script>
+</body>
+</html>
